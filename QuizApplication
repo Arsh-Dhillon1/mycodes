@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Application</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #quiz-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+        .question {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        .options {
+            padding: 20px;
+        }
+        .option {
+            display: block;
+            margin-bottom: 10px;
+            background-color: #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            transform-origin: left;
+        }
+        .option:hover {
+            background-color: #ccc;
+            transform: scale(1.02);
+        }
+        .correct-option {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        .wrong-answer {
+            background-color: #ff5252;
+            color: #fff;
+        }
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #result-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #submit-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 20px;
+            font-size: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #submit-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <div class="header">Quiz Application</div>
+
+        <!-- Science Questions -->
+        <div class="question">1. Which mirror is used in shaving mirrors?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q1" value="Concave" class="correct-option"> Concave</label>
+            <label class="option"><input type="radio" name="q1" value="Convex"> Convex</label>
+            <label class="option"><input type="radio" name="q1" value="Plain"> Plain</label>
+        </div>
+
+        <div class="question">2. Who developed the theory of relativity?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q2" value="Isaac Newton"> Isaac Newton</label>
+            <label class="option"><input type="radio" name="q2" value="Albert Einstein" class="correct-option"> Albert Einstein</label>
+            <label class="option"><input type="radio" name="q2" value="Galileo Galilei"> Galileo Galilei</label>
+        </div>
+
+        <div class="question">3. What phenomenon is responsible for the blue light of the sky?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q3" value="Dispersion"> Dispersion</label>
+            <label class="option"><input type="radio" name="q3" value="Scattering" class="correct-option"> Scattering</label>
+            <label class="option"><input type="radio" name="q3" value="Refraction"> Refraction</label>
+        </div>
+
+        <!-- History Questions -->
+        <div class="question">4. In World War 2 which two countries were the first to start the war?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q4" value="America and Germany"> America and Germany </label>
+            <label class="option"><input type="radio" name="q4" value="Poland and Germany" class="correct-option"> Poland and Germany</label>
+            <label class="option"><input type="radio" name="q4" value="France and Germany"> France and Germany</label>
+        </div>
+
+        <div class="question">5. What is the capital of Japan?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q5" value="Tokyo" class="correct-option"> Tokyo</label>
+            <label class="option"><input type="radio" name="q5" value="Beijing"> Beijing</label>
+            <label class="option"><input type="radio" name="q5" value="Seoul"> Seoul</label>
+        </div>
+
+        <div class="question">6. Who painted the Guernica?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q6" value="Pablo Picasso" class="correct-option"> Pablo Picasso</label>
+            <label class="option"><input type="radio" name="q6" value="Leonardo da Vinci"> Leonardo da Vinci</label>
+            <label class="option"><input type="radio" name="q6" value="Rembrandt"> Rembrandt</label>
+        </div>
+
+        <!-- HTML/CSS/JavaScript Questions -->
+        <div class="question">7. Which programming language is this website built with?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q7" value="HTML"> HTML</label>
+            <label class="option"><input type="radio" name="q7" value="CSS"> CSS</label>
+            <label class="option"><input type="radio" name="q7" value="JavaScript" class="correct-option"> JavaScript</label>
+        </div>
+
+        <div class="question">8. Which is not a valid CSS property?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q8" value="text-height" class="correct-option"> text-height</label>
+            <label class="option"><input type="radio" name="q8" value="font-weight"> font-weight</label>
+            <label class="option"><input type="radio" name="q8" value="background-color"> background-color</label>
+        </div>
+
+        <div class="question">9. What is the use of the noscript tag in Javascript?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q9" value="The contents are displayed by non-JS based browsers" class="correct-option"> The contents are displayed by non-JS based browsers</label>
+            <label class="option"><input type="radio" name="q9" value="Clears all the cache and cookies"> Clears all the cache and cookies</label>
+            <label class="option"><input type="radio" name="q9" value="All of the above"> All of the above</label>
+        </div>
+
+        <div class="question">10. What is the full form of CSS?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q10" value="Cascading Stylish Sheet"> Cascading Stylish Sheet</label>
+            <label class="option"><input type="radio" name="q10" value="Cascading Style Sheet"> Cascading Style Sheet</label>
+            <label class="option"><input type="radio" name="q10" value="Cascading Style Sheets" class="correct-option"> Cascading Style Sheets</label>
+        </div>
+
+        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+        <div id="result"></div>
+        <div id="result-message"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            const answers = {
+                q1: "Concave",
+                q2: "Albert Einstein",
+                q3: "Scattering",
+                q4: "Poland and Germany",
+                q5: "Tokyo",
+                q6: "Pablo Picasso",
+                q7: "JavaScript",
+                q8: "text-height",
+                q9: "The contents are displayed by non-JS based browsers",
+                q10: "Cascading Style Sheets"
+            };
+
+            let score = 0;
+
+            for (const question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption) {
+                    const userAnswer = selectedOption.value;
+                    if (userAnswer === answers[question]) {
+                        score++;
+                        selectedOption.parentElement.classList.add("correct-option");
+                    } else {
+                        selectedOption.parentElement.classList.add("wrong-answer");
+                        const correctOption = document.querySelector(`input[name="${question}"][value="${answers[question]}"]`);
+                        correctOption.parentElement.classList.add("correct-option");
+                    }
+                }
+            }
+
+            const resultElement = document.getElementById("result");
+            const resultMessageElement = document.getElementById("result-message");
+
+            resultElement.textContent = `Your score: ${score} out of ${Object.keys(answers).length}`;
+
+            if (score === 0) {
+                resultMessageElement.textContent = "You seem to be an Intelligent Man!";
+            } else if (score === Object.keys(answers).length) {
+                resultMessageElement.textContent = "You are a Geek!";
+            } else {
+                resultMessageElement.textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>
